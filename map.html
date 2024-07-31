@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c89e7ca3eef74d311f0d7c2455a5b74c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c89e7ca3eef74d311f0d7c2455a5b74c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c89e7ca3eef74d311f0d7c2455a5b74c = L.map(
+                "map_c89e7ca3eef74d311f0d7c2455a5b74c",
+                {
+                    center: [-18.14044594017094, -45.34402777777778],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_32b04f08f5a7a2310db101d84d51c3cc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_32b04f08f5a7a2310db101d84d51c3cc.addTo(map_c89e7ca3eef74d311f0d7c2455a5b74c);
+        
+    
+        function geo_json_1cf2054a5528630c187761d0da58d724_styler(feature) {
+            switch(feature.properties.ID) {
+                case "587": case "588": case "590": case "591": case "594": case "596": 
+                    return {"markerColor": "green"};
+                default:
+                    return {"markerColor": "blue"};
+            }
+        }
+        function geo_json_1cf2054a5528630c187761d0da58d724_pointToLayer(feature, latlng) {
+            var opts = {};
+            
+            const iconOptions = {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            const iconRootAlias = L.AwesomeMarkers
+            opts.icon = new iconRootAlias.Icon(iconOptions)
+            
+            let style = geo_json_1cf2054a5528630c187761d0da58d724_styler(feature)
+            Object.assign(opts.icon.options, style)
+            
+            return new L.Marker(latlng, opts)
+        }
+
+        function geo_json_1cf2054a5528630c187761d0da58d724_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_1cf2054a5528630c187761d0da58d724 = L.geoJson(null, {
+                onEachFeature: geo_json_1cf2054a5528630c187761d0da58d724_onEachFeature,
+            
+                style: geo_json_1cf2054a5528630c187761d0da58d724_styler,
+                pointToLayer: geo_json_1cf2054a5528630c187761d0da58d724_pointToLayer,
+        });
+
+        function geo_json_1cf2054a5528630c187761d0da58d724_add (data) {
+            geo_json_1cf2054a5528630c187761d0da58d724
+                .addData(data);
+        }
+            geo_json_1cf2054a5528630c187761d0da58d724_add({"bbox": [-50.05694444444444, -19.825555555555557, -41.44472222222222, -15.368611111111111], "features": [{"bbox": [-46.933611111111105, -17.299166666666668, -46.933611111111105, -17.299166666666668], "geometry": {"coordinates": [-46.933611111111105, -17.299166666666668], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Paracatu", "Bacia Federal": "Rio S\u00e3o Francisco", "CPF/CNPJ": "501.60******", "Curso D\u0027\u00e1gua": "Afluente do C\u00f3rrego Rico", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 25.0, "Empreendimento": "Fazenda******", "Finalidade de uso": "Irriga\u00e7\u00e3o de uma \u00e1rea de 15 ha atrav\u00e9s do m\u00e9todo de piv\u00f4 central", "Horas/dia": "20:00", "ID": "587", "Latitude in\u00edcio": -17.299166666666668, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=587", "Longitude in\u00edcio": -46.933611111111105, "Modo de Uso": "03 - CAPTA\u00c7\u00c3O EM BARRAMENTO EM CURSO DE \u00c1GUA, C/ REGULARIZA\u00c7\u00c3O DE VAZ\u00c3O (\u00c1REA M\u00c1X MENOR OU IGUAL 5,00 HA)", "Munic\u00edpio(s) do empreendimento": "Paracatu", "N\u00ba do Processo": "35789/2016", "N\u00edvel din\u00e2mico": "N/A", "N\u00edvel est\u00e1tico": "N/A", "Portaria": "1700501/2018", "Prazo de validade da Outorga": "05 (cinco) anos", "Regional": "URGA Noroeste de Minas", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Superficial", "UPGRH": "SF7: Rio Paracatu", "Unidade de vaz\u00e3o": "l/s", "Vaz\u00e3o liberada (l/s)": 20.0, "Vaz\u00e3o liberada (m\u00b3/h)": null, "Volume (m\u00b3)": 36000.0, "Volume acumulado": "58022 m\u00b3", "\u00c1rea inundada": "2,53 ha"}, "type": "Feature"}, {"bbox": [-44.59041666666667, -17.806075, -44.59041666666667, -17.806075], "geometry": {"coordinates": [-44.59041666666667, -17.806075], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio das Velhas", "Bacia Federal": "Rio S\u00e3o Francisco", "CPF/CNPJ": "822.47******", "Curso D\u0027\u00e1gua": "Rio das Velhas", "Data de Publica\u00e7\u00e3o": "27/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 30.0, "Empreendimento": "Jo\u00e3o******", "Finalidade de uso": "irriga\u00e7\u00e3o de uma \u00e1rea de 100 ha atrav\u00e9s do m\u00e9todo de piv\u00f4 central e irriga\u00e7\u00e3o de uma \u00e1rea de 100 ha atrav\u00e9s do m\u00e9todo de micro aspers\u00e3o", "Horas/dia": "14:00", "ID": "588", "Latitude in\u00edcio": -17.806075, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=588", "Longitude in\u00edcio": -44.59041666666667, "Modo de Uso": "01 - CAPTA\u00c7\u00c3O EM CORPO DE \u00c1GUA (RIOS, LAGOAS NATURAIS ETC)", "Munic\u00edpio(s) do empreendimento": "Lassance", "N\u00ba do Processo": "38823/2016", "N\u00edvel din\u00e2mico": "N/A", "N\u00edvel est\u00e1tico": "N/A", "Portaria": "1600502/2018", "Prazo de validade da Outorga": "05 anos", "Regional": "URGA Norte de Minas", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Superficial", "UPGRH": "SF5: Rio das Velhas", "Unidade de vaz\u00e3o": "l/s", "Vaz\u00e3o liberada (l/s)": 270.0, "Vaz\u00e3o liberada (m\u00b3/h)": null, "Volume (m\u00b3)": 408240.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-46.60194444444445, -15.368611111111111, -46.60194444444445, -15.368611111111111], "geometry": {"coordinates": [-46.60194444444445, -15.368611111111111], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Urucuia", "Bacia Federal": "Rio S\u00e3o Francisco", "CPF/CNPJ": "36.320******", "Curso D\u0027\u00e1gua": "N/A", "Data de Publica\u00e7\u00e3o": "24/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 31.0, "Empreendimento": "ADM******", "Finalidade de uso": "Consumo humano", "Horas/dia": "03:00", "ID": "589", "Latitude in\u00edcio": -15.368611111111111, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=589", "Longitude in\u00edcio": -46.60194444444445, "Modo de Uso": "08 - CAPTA\u00c7\u00c3O DE \u00c1GUA SUBTERR\u00c2NEA POR MEIO DE PO\u00c7O TUBULAR J\u00c1 EXISTENTE", "Munic\u00edpio(s) do empreendimento": "Buritis", "N\u00ba do Processo": "01579/2011", "N\u00edvel din\u00e2mico": "58,0 m", "N\u00edvel est\u00e1tico": "42,7 m", "Portaria": "1700503/2018", "Prazo de validade da Outorga": "05 (cinco) anos", "Regional": "URGA Noroeste de Minas", "Renova\u00e7\u00e3o da Portaria de Outorga": "0000309/2006", "Tipo de uso": "Subterr\u00e2neo", "UPGRH": "SF8: Rio Urucuia", "Unidade de vaz\u00e3o": "m\u00b3/h", "Vaz\u00e3o liberada (l/s)": null, "Vaz\u00e3o liberada (m\u00b3/h)": 3.0, "Volume (m\u00b3)": 0.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-42.35444444444445, -18.365833333333335, -42.35444444444445, -18.365833333333335], "geometry": {"coordinates": [-42.35444444444445, -18.365833333333335], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Sua\u00e7u\u00ed Grande", "Bacia Federal": "Rio Doce", "CPF/CNPJ": "501.47******", "Curso D\u0027\u00e1gua": "Rio Sua\u00e7u\u00ed Grande", "Data de Publica\u00e7\u00e3o": "24/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 31.0, "Empreendimento": "Fazenda******", "Finalidade de uso": "Irriga\u00e7\u00e3o de uma \u00e1rea de 10,11 ha atrav\u00e9s do m\u00e9todo de aspers\u00e3o convencional", "Horas/dia": "11:30", "ID": "590", "Latitude in\u00edcio": -18.365833333333335, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=590", "Longitude in\u00edcio": -42.35444444444445, "Modo de Uso": "01 - CAPTA\u00c7\u00c3O EM CORPO DE \u00c1GUA (RIOS, LAGOAS NATURAIS ETC)", "Munic\u00edpio(s) do empreendimento": "Santa Maria do Sua\u00e7u\u00ed", "N\u00ba do Processo": "32275/2015", "N\u00edvel din\u00e2mico": "N/A", "N\u00edvel est\u00e1tico": "N/A", "Portaria": "1500504/2018", "Prazo de validade da Outorga": "05 anos", "Regional": "URGA Leste de Minas", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Superficial", "UPGRH": "DO4: Rio Sua\u00e7u\u00ed Grande", "Unidade de vaz\u00e3o": "l/s", "Vaz\u00e3o liberada (l/s)": 11.0, "Vaz\u00e3o liberada (m\u00b3/h)": null, "Volume (m\u00b3)": 14080.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-41.89861111111111, -18.56416666666667, -41.89861111111111, -18.56416666666667], "geometry": {"coordinates": [-41.89861111111111, -18.56416666666667], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Sua\u00e7u\u00ed Grande", "Bacia Federal": "Rio Doce", "CPF/CNPJ": "02.275******", "Curso D\u0027\u00e1gua": "Rio Sua\u00e7u\u00ed Grande", "Data de Publica\u00e7\u00e3o": "24/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 20.0, "Empreendimento": "Fazenda******", "Finalidade de uso": "Irriga\u00e7\u00e3o de uma \u00e1rea de 122,34 ha, atrav\u00e9s do m\u00e9todo de aspers\u00e3o convencional e piv\u00f4 central", "Horas/dia": "21:00", "ID": "591", "Latitude in\u00edcio": -18.56416666666667, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=591", "Longitude in\u00edcio": -41.89861111111111, "Modo de Uso": "01 - CAPTA\u00c7\u00c3O EM CORPO DE \u00c1GUA (RIOS, LAGOAS NATURAIS ETC)", "Munic\u00edpio(s) do empreendimento": "Frei Inoc\u00eancio", "N\u00ba do Processo": "02755/2018", "N\u00edvel din\u00e2mico": "N/A", "N\u00edvel est\u00e1tico": "N/A", "Portaria": "1500505/2018", "Prazo de validade da Outorga": "05 anos", "Regional": "URGA Leste de Minas", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Superficial", "UPGRH": "DO4: Rio Sua\u00e7u\u00ed Grande", "Unidade de vaz\u00e3o": "l/s", "Vaz\u00e3o liberada (l/s)": 179.7, "Vaz\u00e3o liberada (m\u00b3/h)": null, "Volume (m\u00b3)": 271706.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-43.73694444444445, -18.44388888888889, -43.73694444444445, -18.44388888888889], "geometry": {"coordinates": [-43.73694444444445, -18.44388888888889], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio das Velhas", "Bacia Federal": "Rio S\u00e3o Francisco", "CPF/CNPJ": "66.416******", "Curso D\u0027\u00e1gua": "N/A", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 31.0, "Empreendimento": "Posto******", "Finalidade de uso": "Consumo humano, Consumo industrial", "Horas/dia": "13:33", "ID": "592", "Latitude in\u00edcio": -18.44388888888889, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=592", "Longitude in\u00edcio": -43.73694444444445, "Modo de Uso": "08 - CAPTA\u00c7\u00c3O DE \u00c1GUA SUBTERR\u00c2NEA POR MEIO DE PO\u00c7O TUBULAR J\u00c1 EXISTENTE", "Munic\u00edpio(s) do empreendimento": "Gouv\u00eaa", "N\u00ba do Processo": "40305/2016", "N\u00edvel din\u00e2mico": "120 m", "N\u00edvel est\u00e1tico": "26 m", "Portaria": "1400506/2018", "Prazo de validade da Outorga": "05 (cinco) anos", "Regional": "URGA Jequitinhonha", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Subterr\u00e2neo", "UPGRH": "SF5: Rio das Velhas", "Unidade de vaz\u00e3o": "m\u00b3/h", "Vaz\u00e3o liberada (l/s)": null, "Vaz\u00e3o liberada (m\u00b3/h)": 1.5, "Volume (m\u00b3)": 0.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-50.05694444444444, -19.747777777777777, -50.05694444444444, -19.747777777777777], "geometry": {"coordinates": [-50.05694444444444, -19.747777777777777], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "C\u00f3rrego Engano", "Bacia Federal": "Rio Grande", "CPF/CNPJ": "N\u00e3o informado", "Curso D\u0027\u00e1gua": "N/A", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 31.0, "Empreendimento": "FAZENDA******", "Finalidade de uso": "Consumo humano 15 pessoas, Consumo industrial", "Horas/dia": "02:00", "ID": "593", "Latitude in\u00edcio": -19.747777777777777, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=593", "Longitude in\u00edcio": -50.05694444444444, "Modo de Uso": "08 - CAPTA\u00c7\u00c3O DE \u00c1GUA SUBTERR\u00c2NEA POR MEIO DE PO\u00c7O TUBULAR J\u00c1 EXISTENTE", "Munic\u00edpio(s) do empreendimento": "Campina Verde", "N\u00ba do Processo": "27266/2015", "N\u00edvel din\u00e2mico": "9,7 m", "N\u00edvel est\u00e1tico": "8,00 m", "Portaria": "1900507/2018", "Prazo de validade da Outorga": "At\u00e9 18/08/2028", "Regional": "URGA Tri\u00e2ngulo Mineiro", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Subterr\u00e2neo", "UPGRH": "GD8: Baixo rio Grande", "Unidade de vaz\u00e3o": "m\u00b3/h", "Vaz\u00e3o liberada (l/s)": null, "Vaz\u00e3o liberada (m\u00b3/h)": 6.8, "Volume (m\u00b3)": 0.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-41.70527777777778, -19.825555555555557, -41.70527777777778, -19.825555555555557], "geometry": {"coordinates": [-41.70527777777778, -19.825555555555557], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Manhua\u00e7u", "Bacia Federal": "Rio Doce", "CPF/CNPJ": "459.03******", "Curso D\u0027\u00e1gua": "C\u00f3rrego do Cobrador", "Data de Publica\u00e7\u00e3o": "24/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 3.0, "Empreendimento": "Heliete******", "Finalidade de uso": "Irriga\u00e7\u00e3o de pastagens, de uma \u00e1rea de 10,00 ha, atrav\u00e9s do m\u00e9todo de aspers\u00e3o convencional", "Horas/dia": "07:00", "ID": "594", "Latitude in\u00edcio": -19.825555555555557, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=594", "Longitude in\u00edcio": -41.70527777777778, "Modo de Uso": "01 - CAPTA\u00c7\u00c3O EM CORPO DE \u00c1GUA (RIOS, LAGOAS NATURAIS ETC)", "Munic\u00edpio(s) do empreendimento": "Ipanema", "N\u00ba do Processo": "33872/2014", "N\u00edvel din\u00e2mico": "N/A", "N\u00edvel est\u00e1tico": "N/A", "Portaria": "1500508/2018", "Prazo de validade da Outorga": "05 anos", "Regional": "URGA Leste de Minas", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Superficial", "UPGRH": "DO6: Rio Manhua\u00e7u", "Unidade de vaz\u00e3o": "l/s", "Vaz\u00e3o liberada (l/s)": 12.0, "Vaz\u00e3o liberada (m\u00b3/h)": null, "Volume (m\u00b3)": 907.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-46.655, -19.15222222222222, -46.655, -19.15222222222222], "geometry": {"coordinates": [-46.655, -19.15222222222222], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "RIO QUEBRA ANZOL", "Bacia Federal": "Rio S\u00e3o Francisco", "CPF/CNPJ": "N\u00e3o informado", "Curso D\u0027\u00e1gua": "N/A", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 30.0, "Empreendimento": "FAZENDA******", "Finalidade de uso": "Consumo humano 20 pessoas, Consumo agroindustrial", "Horas/dia": "00:20", "ID": "595", "Latitude in\u00edcio": -19.15222222222222, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=595", "Longitude in\u00edcio": -46.655, "Modo de Uso": "08 - CAPTA\u00c7\u00c3O DE \u00c1GUA SUBTERR\u00c2NEA POR MEIO DE PO\u00c7O TUBULAR J\u00c1 EXISTENTE", "Munic\u00edpio(s) do empreendimento": "Serra do Salitre", "N\u00ba do Processo": "36401/2016", "N\u00edvel din\u00e2mico": "8,5 m", "N\u00edvel est\u00e1tico": "7,0 m", "Portaria": "1900509/2018", "Prazo de validade da Outorga": "5 (cinco) anos", "Regional": "URGA Tri\u00e2ngulo Mineiro", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Subterr\u00e2neo", "UPGRH": "SF4: Entorno da represa de Tr\u00eas Marias", "Unidade de vaz\u00e3o": "m\u00b3/h", "Vaz\u00e3o liberada (l/s)": null, "Vaz\u00e3o liberada (m\u00b3/h)": 6.2, "Volume (m\u00b3)": 0.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-47.05027777777777, -17.657777777777778, -47.05027777777777, -17.657777777777778], "geometry": {"coordinates": [-47.05027777777777, -17.657777777777778], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Paracatu", "Bacia Federal": "Rio S\u00e3o Francisco", "CPF/CNPJ": "095.08******", "Curso D\u0027\u00e1gua": "C\u00f3rrego Olaria", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 6.0, "Empreendimento": "Fazenda******", "Finalidade de uso": "Irriga\u00e7\u00e3o de uma \u00e1rea de 43 ha atrav\u00e9s do m\u00e9todo de piv\u00f4 central", "Horas/dia": "12:00", "ID": "596", "Latitude in\u00edcio": -17.657777777777778, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=596", "Longitude in\u00edcio": -47.05027777777777, "Modo de Uso": "04 - CAPTA\u00c7\u00c3O EM BARRAMENTO EM CURSO DE \u00c1GUA, COM REGULARIZA\u00c7\u00c3O DE VAZ\u00c3O (\u00c1REA M\u00c1X MAIOR 5,00 HA)", "Munic\u00edpio(s) do empreendimento": "Guarda-Mor", "N\u00ba do Processo": "27883/2017", "N\u00edvel din\u00e2mico": "N/A", "N\u00edvel est\u00e1tico": "N/A", "Portaria": "1700510/2018", "Prazo de validade da Outorga": "05 (cinco) anos", "Regional": "URGA Noroeste de Minas", "Renova\u00e7\u00e3o da Portaria de Outorga": "0000016/2014", "Tipo de uso": "Superficial", "UPGRH": "SF7: Rio Paracatu", "Unidade de vaz\u00e3o": "l/s", "Vaz\u00e3o liberada (l/s)": 33.0, "Vaz\u00e3o liberada (m\u00b3/h)": null, "Volume (m\u00b3)": 8553.6, "Volume acumulado": "129584,12 m\u00b3", "\u00c1rea inundada": "7,12 ha"}, "type": "Feature"}, {"bbox": [-48.34111111111111, -18.796111111111113, -48.34111111111111, -18.796111111111113], "geometry": {"coordinates": [-48.34111111111111, -18.796111111111113], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Uberabinha", "Bacia Federal": "Rio Parana\u00edba", "CPF/CNPJ": "05.341******", "Curso D\u0027\u00e1gua": "N/A", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 31.0, "Empreendimento": "Valoriza******", "Finalidade de uso": "Consumo humano 120 pessoas, Consumo industrial, Paisagismo, Combate a inc\u00eandios", "Horas/dia": "07:00", "ID": "597", "Latitude in\u00edcio": -18.796111111111113, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=597", "Longitude in\u00edcio": -48.34111111111111, "Modo de Uso": "08 - CAPTA\u00c7\u00c3O DE \u00c1GUA SUBTERR\u00c2NEA POR MEIO DE PO\u00c7O TUBULAR J\u00c1 EXISTENTE", "Munic\u00edpio(s) do empreendimento": "Uberl\u00e2ndia", "N\u00ba do Processo": "14707/2015", "N\u00edvel din\u00e2mico": "161,09 m", "N\u00edvel est\u00e1tico": "159,08 m", "Portaria": "1900511/2018", "Prazo de validade da Outorga": "5 (cinco) anos", "Regional": "URGA Tri\u00e2ngulo Mineiro", "Renova\u00e7\u00e3o da Portaria de Outorga": "0001436/2010", "Tipo de uso": "Subterr\u00e2neo", "UPGRH": "PN2: Rio Araguari", "Unidade de vaz\u00e3o": "m\u00b3/h", "Vaz\u00e3o liberada (l/s)": null, "Vaz\u00e3o liberada (m\u00b3/h)": 2.72, "Volume (m\u00b3)": 0.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-48.10305555555556, -18.844444444444445, -48.10305555555556, -18.844444444444445], "geometry": {"coordinates": [-48.10305555555556, -18.844444444444445], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Rio Araguari", "Bacia Federal": "Rio Parana\u00edba", "CPF/CNPJ": "240.66******", "Curso D\u0027\u00e1gua": "N/A", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 31.0, "Empreendimento": "Odair******", "Finalidade de uso": "Dessedenta\u00e7\u00e3o de animais", "Horas/dia": "02:00", "ID": "598", "Latitude in\u00edcio": -18.844444444444445, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=598", "Longitude in\u00edcio": -48.10305555555556, "Modo de Uso": "08 - CAPTA\u00c7\u00c3O DE \u00c1GUA SUBTERR\u00c2NEA POR MEIO DE PO\u00c7O TUBULAR J\u00c1 EXISTENTE", "Munic\u00edpio(s) do empreendimento": "Araguari", "N\u00ba do Processo": "02713/2016", "N\u00edvel din\u00e2mico": "80,22 m", "N\u00edvel est\u00e1tico": "22,00 m", "Portaria": "1900512/2018", "Prazo de validade da Outorga": "5 (cinco) anos", "Regional": "URGA Tri\u00e2ngulo Mineiro", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Subterr\u00e2neo", "UPGRH": "PN2: Rio Araguari", "Unidade de vaz\u00e3o": "m\u00b3/h", "Vaz\u00e3o liberada (l/s)": null, "Vaz\u00e3o liberada (m\u00b3/h)": 0.5, "Volume (m\u00b3)": 0.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}, {"bbox": [-41.44472222222222, -15.954166666666666, -41.44472222222222, -15.954166666666666], "geometry": {"coordinates": [-41.44472222222222, -15.954166666666666], "type": "Point"}, "id": "0", "properties": {"Bacia Estadual": "Ribeir\u00e3o Urubu", "Bacia Federal": "Rio Jequitinhonha", "CPF/CNPJ": "09.104******", "Curso D\u0027\u00e1gua": "", "Data de Publica\u00e7\u00e3o": "25/10/2018", "Data de cadastro": "23/10/2018", "Decis\u00e3o": "Deferido", "Dias/m\u00eas": 31.0, "Empreendimento": "COPANOR******", "Finalidade de uso": "Abastecimento p\u00fablico", "Horas/dia": "16:00", "ID": "599", "Latitude in\u00edcio": -15.954166666666666, "Link": "https://sistemas.meioambiente.mg.gov.br/licenciamento/site/detalhes-outorga?id=599", "Longitude in\u00edcio": -41.44472222222222, "Modo de Uso": "08 - CAPTA\u00c7\u00c3O DE \u00c1GUA SUBTERR\u00c2NEA POR MEIO DE PO\u00c7O TUBULAR J\u00c1 EXISTENTE", "Munic\u00edpio(s) do empreendimento": "Cachoeira de Paje\u00fa", "N\u00ba do Processo": "26512/2015", "N\u00edvel din\u00e2mico": "71,63 m", "N\u00edvel est\u00e1tico": "2,80 m", "Portaria": "1400513/2018", "Prazo de validade da Outorga": "35 (trinta e cinco) anos", "Regional": "URGA Jequitinhonha", "Renova\u00e7\u00e3o da Portaria de Outorga": "", "Tipo de uso": "Subterr\u00e2neo", "UPGRH": "JQ3: M\u00e9dio e Baixo rio Jequitinhonha", "Unidade de vaz\u00e3o": "m\u00b3/h", "Vaz\u00e3o liberada (l/s)": null, "Vaz\u00e3o liberada (m\u00b3/h)": 14.4, "Volume (m\u00b3)": 0.0, "Volume acumulado": "N/A", "\u00c1rea inundada": "N/A"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_1cf2054a5528630c187761d0da58d724.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Renova\u00e7\u00e3o da Portaria de Outorga", "ID", "Portaria", "Data de cadastro", "Data de Publica\u00e7\u00e3o", "N\u00ba do Processo", "Regional", "Empreendimento", "CPF/CNPJ", "Munic\u00edpio(s) do empreendimento", "Modo de Uso", "Tipo de uso", "Unidade de vaz\u00e3o", "Decis\u00e3o", "Prazo de validade da Outorga", "Bacia Estadual", "Bacia Federal", "UPGRH", "Curso D\u0027\u00e1gua", "\u00c1rea inundada", "Volume acumulado", "N\u00edvel est\u00e1tico", "N\u00edvel din\u00e2mico", "Vaz\u00e3o liberada (l/s)", "Horas/dia", "Dias/m\u00eas", "Volume (m\u00b3)", "Latitude in\u00edcio", "Longitude in\u00edcio", "Finalidade de uso", "Link", "Vaz\u00e3o liberada (m\u00b3/h)"];
+    let aliases = ["Renova\u00e7\u00e3o da Portaria de Outorga", "ID", "Portaria", "Data de cadastro", "Data de Publica\u00e7\u00e3o", "N\u00ba do Processo", "Regional", "Empreendimento", "CPF/CNPJ", "Munic\u00edpio(s) do empreendimento", "Modo de Uso", "Tipo de uso", "Unidade de vaz\u00e3o", "Decis\u00e3o", "Prazo de validade da Outorga", "Bacia Estadual", "Bacia Federal", "UPGRH", "Curso D\u0027\u00e1gua", "\u00c1rea inundada", "Volume acumulado", "N\u00edvel est\u00e1tico", "N\u00edvel din\u00e2mico", "Vaz\u00e3o liberada (l/s)", "Horas/dia", "Dias/m\u00eas", "Volume (m\u00b3)", "Latitude in\u00edcio", "Longitude in\u00edcio", "Finalidade de uso", "Link", "Vaz\u00e3o liberada (m\u00b3/h)"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumpopup"});
+                     
+    
+            geo_json_1cf2054a5528630c187761d0da58d724.addTo(map_c89e7ca3eef74d311f0d7c2455a5b74c);
+        
+    
+            var layer_control_4f0cf8939b9b81220d0fa19a0bc91983_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_32b04f08f5a7a2310db101d84d51c3cc,
+                },
+                overlays :  {
+                    "Water permits" : geo_json_1cf2054a5528630c187761d0da58d724,
+                },
+            };
+            let layer_control_4f0cf8939b9b81220d0fa19a0bc91983 = L.control.layers(
+                layer_control_4f0cf8939b9b81220d0fa19a0bc91983_layers.base_layers,
+                layer_control_4f0cf8939b9b81220d0fa19a0bc91983_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_c89e7ca3eef74d311f0d7c2455a5b74c);
+
+        
+</script>
+</html>
